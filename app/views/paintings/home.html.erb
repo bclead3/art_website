@@ -1,0 +1,76 @@
+<style>
+body {
+    color: #999999;
+}
+.home-page {
+    position: relative;
+    float: left;
+}
+.home-page a {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+.home-page-background {
+    margin: 200px 50px 0 50px;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.home-page-background-text {
+    position: relative;
+    float: left;
+    font-size: 1.5em;
+    width: 30%;
+    padding-right: 20px;
+}
+
+.home-page-background-image {
+    float: left;
+    width: 60%;
+}
+
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss3_reflection_below */
+.home-page-background-image {
+    position: relative;
+    background: url('/Media/Oceanside/Mendocino Coastline.jpg') bottom;
+    width: 600px;
+    height: 800px;
+}
+.home-page-background-image:after,
+.home-page-background-image:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: 50%;
+    bottom: -50%;
+}
+.home-page-background-image:after {
+    background: inherit;
+    transform: scaleY(-1);
+}
+.home-page-background-image:before {
+    z-index: 1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+}
+
+</style>
+
+<%= render 'layouts/header', dir_name: nil %>
+<main id='mainPageSection' class="main-home-page">
+  <div id='homePage' class="home-page">
+    <div class="home-page-background">
+      <div class="home-page-background-text">
+        <p>Currently, I’m a pleine aire painter of rural Minnesota and areas along the Pacific coast. I have been a student of <a href='https://www.joepaquet.com/'>Joe Paquet</a>, a pleine aire landscape painter who taught me a chromatic color palette and the beginnings of how to see and then paint nature, as light  hits form to canvas.</p>
+        <p>From there it has been just practicing, trying to get a simplified image to sit calmly on the surface. Painting and practicing and painting some more....</p>
+        <p>A learning process at best.</p>
+        <p>I have been an art director in New York City for advertising, and I have been an art teacher in the public schools of Minnesota, now I create art at a more relaxed place in my life.</p>
+        <p><bold>St. Peter, MN</bold></p>
+      </div>
+      <div class="home-page-background-image">
+        <img src='/Media/Oceanside/Mendocino Coastline.jpg' />
+        <canvas class="bridge-reflection"></canvas>
+      </div>
+    </div>
+  </div>
+</main>

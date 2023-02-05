@@ -1,0 +1,16 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@rails/webpacker": "5.4.3",
+    "sass": "^1.57.1",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "scripts": {
+    "build:css": "sass app/assets/packs/styles/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3"
+  }
+}
