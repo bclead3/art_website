@@ -137,7 +137,23 @@ https://stackoverflow.com/questions/31943618/how-to-scale-an-image-with-css-to-f
 CSS Flex with Wrap
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mastering_Wrapping_of_Flex_Items
 
+Rake w/ Environment (for ActiveRecord Models) and arguments
+https://thoughtbot.com/blog/how-to-use-arguments-in-a-rake-task
+rake tweets:send\[cpytel\]
+Or this:
+rake 'tweets:send[cpytel]'
+
+https://stackoverflow.com/questions/876396/do-rails-rake-tasks-provide-access-to-activerecord-models
+https://www.rubyguides.com/2019/02/ruby-rake/
+
 Hired
 
 Upwork
 https://www.upwork.com/nx/jobs/search/details/~0191a8b29a1edeabc2?q=ruby%20rails&sort=recency&contractor_tier=3&pageTitle=Job%20Detail&_modalInfo=%5B%7B%22navType%22%3A%22slider%22,%22title%22%3A%22Job%20Detail%22,%22modalId%22%3A%221672999215959%22%7D%5D&_navType=slider
+
+
+* Import paintings
+* Carousel 
+* ActiveAdmin
+* Grid Javascript
+* Migrate to host

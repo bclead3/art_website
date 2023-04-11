@@ -1,0 +1,17 @@
+<div class="gallery-main">
+  <div class="gallery-title"><%= category %></div>
+  <div class="gallery-wrapper">
+    <% file_arr, painting_arr = retrieve_file_array(category) %>
+    <% painting_arr.each_with_index do |painting, arr_index| %>
+      <% file_path = file_arr[arr_index] %>
+      <% title = painting.name %>
+      <div class="landscapes-button">
+        <div class="title"><%= title %></div>
+        <div class="status sold <%= painting.is_sold %>"></div>
+        <a class="landscapes-anchor" href='<%= file_path %>'>
+          <img src='<%= file_path %>' alt='<%= title %>' />
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
