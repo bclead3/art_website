@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  # devise_for :users
+  # ActiveAdmin
+  ActiveAdmin.routes(self) if Object.const_defined?('ActiveAdmin')
 
   get '/profile', to: 'paintings#profile'
   get '/portraits', to: 'paintings#portraits'

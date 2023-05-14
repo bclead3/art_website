@@ -2,13 +2,18 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
     "@rails/webpacker": "5.4.3",
-    "sass": "^1.57.1",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12"
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.4",
+    "esbuild": "^0.17.17",
+    "sass": "^1.62.0",
+    "webpack": "^5.79.0",
+    "webpack-cli": "^5.0.1"
   },
   "scripts": {
-    "build:css": "sass app/assets/packs/styles/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
     "webpack-dev-server": "^3"

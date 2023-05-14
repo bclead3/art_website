@@ -44,13 +44,16 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 gem "sassc-rails"
+gem 'bootstrap'
 gem 'cssbundling-rails'
 gem 'webpacker'
 gem 'addressable'
 
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 gem 'carrierwave'
+gem 'devise'
 gem 'mini_magick'
 gem 'activeadmin'
 gem 'file_validators'
@@ -79,3 +82,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "jsbundling-rails", "~> 1.1"

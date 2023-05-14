@@ -1,0 +1,124 @@
+<style>
+    .modal-body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    .slider {
+        width: 100%;
+        max-width: 800px;
+        height: 350px;
+        position: relative;
+        /* overflow: hidden; */
+        border-radius: 15px;
+    }
+
+    /*.slide {*/
+    /*    width: 100%;*/
+    /*    max-width: 800px;*/
+    /*    !*height: 350px;*!*/
+    /*    position: absolute;*/
+    /*    transition: all 0.5s;*/
+    /*}*/
+
+    /*.btn {*/
+    /*    position: absolute;*/
+    /*    width: 40px;*/
+    /*    height: 40px;*/
+    /*    padding: 10px;*/
+    /*    border: none;*/
+    /*    border-radius: 50%;*/
+    /*    z-index: 10;*/
+    /*    cursor: pointer;*/
+    /*    background-color: #fff;*/
+    /*    font-size: 18px;*/
+    /*}*/
+
+    /*.btn:active {*/
+    /*    transform: scale(1.1);*/
+    /*}*/
+
+    .btn-prev {
+        top: 45%;
+        left: 2%;
+    }
+
+    .btn-next {
+        top: 45%;
+        right: 2%;
+    }
+    .slideshow-button {
+        margin-top: 20%;
+    }
+</style>
+
+
+
+<div class="slideshow-button">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Display Picture Carousel
+  </button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><%= category %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-item active">
+              <img class="d-block " src="uploads/image/painting/Northshore/157/Cabin__6__Superior.jpg" alt="First slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Cabin 6 Superior</h5>
+                <p>...</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block " src="uploads/image/painting/Northshore/158/North_Shore_Bay.jpg" alt="Second slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>North Shore Bay</h5>
+                <p>...</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="d-block " src="uploads/image/painting/Northshore/159/Northern_Wetland.jpg" alt="Third slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Northern Wetland</h5>
+                <p>...</p>
+              </div>
+            </div>
+            <div class="carousel-item"><!-- w-100 -->
+              <img class="d-block " src="uploads/image/painting/Northshore/160/The_Next_Generation_Kadance_River.jpg" alt="Fourth slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>The Next Generation Kadence River</h5>
+                <p>...</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
