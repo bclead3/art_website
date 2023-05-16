@@ -89,9 +89,10 @@ test:
 production:
   <<: *default
   database: art_app_production
-  username: <%= ENV.fetch("POSTGRES_USER") %>
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
-  port: <%= ENV.fetch("POSTGRES_PORT") { 5432 } %>
+  url: <%= ENV["DATABASE_URL"] %>
+#  username: <%#= ENV.fetch("POSTGRES_USER") %>
+#  password: <%#= ENV.fetch("POSTGRES_PASSWORD") %>
+#  port: <%#= ENV.fetch("POSTGRES_PORT") { 5432 } %>
 
 
 # SQLite. Versions 3.8.0 and up are supported.
