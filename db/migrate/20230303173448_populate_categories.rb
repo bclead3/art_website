@@ -1,4 +1,4 @@
-class CreateCategories < ActiveRecord::Migration[7.0]
+class PopulateCategories < ActiveRecord::Migration[7.0]
   def self.up
     %w[Journal Landscapes Northshore Oceanside Portraits Prints Winterscapes].each do |category|
       cat = Category.find_or_create_by(name: category)
