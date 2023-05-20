@@ -148,21 +148,7 @@
 
 </style>
 
-<script>
-    // Select all slides
-    $(document).ready(function(e) {
-        var i = Util.getSelectorFromElement(this);
-        if (i) {
-            var s = t(i)[0];
-            if (s && t(s).hasClass(_)) {
-                var a = r({}, t(s).data(), t(this).data()),
-                  l = this.getAttribute("data-slide-to");
-                l && (a.interval = !1), o._jQueryInterface.call(t(s), a), l && t(s).data(n).to(l), e.preventDefault()
-            }
-        }
-    })
 
-</script>
 
 <%= render 'layouts/header', dir_name: category %>
 

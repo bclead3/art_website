@@ -5,7 +5,7 @@ module.exports = {
   mode: "production",
   devtool: "source-map",
   entry: {
-    application: "./app/javascript/application_js.js"
+    application: "./app/javascript/application.js"
   },
   output: {
     filename: "[name].js",

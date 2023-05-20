@@ -52,3 +52,4 @@ yarn-debug.log*
 */.DS_Store
 
 yarn.lock
+.byebug_history

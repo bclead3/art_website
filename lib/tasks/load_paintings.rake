@@ -12,7 +12,6 @@
             # page_position: nil,
             # name: nil,
 # background: nil,
-            # date: nil,
 # timestamp: nil.
             # price: nil,
             # is_sold: nil,
@@ -216,13 +215,11 @@ namespace :paintings do
       dt = DateTime.parse(date_str)
       puts "title:#{title}"
       puts "link:#{link}"
-      puts "date:#{date_str}"
-      puts "dt 2:#{dt.iso8601}"
+      puts "dt  :#{dt.iso8601}"
 
       painting_h = {
         name: title,
         page_position: (journal_index + 1),
-        date: dt.iso8601,
         timestamp: dt.iso8601,
         category_id: 1, #Journal
         type_id: 1      #Painting
@@ -276,12 +273,46 @@ namespace :paintings do
   end
 
   desc 'Take paintings from public/Media and populate the Painting database table'
-  task :reset do |t, args|
+  task :uploads_reset, [:category] => [:environment] do |t, args|
     puts "args #{args}"
-    puts "category:#{args[:category]}"
-    FileUtils.rm_rf('directorypath/name')
+    cat_arr = Category.all.map(&:name)
+    cat_arr.each do |cat_name|
+      puts "Clearing files from #{cat_name} directory"
+      FileUtils.rm_r( Dir.glob("#{Rails.root}/public/uploads/image/painting/#{cat_name}/**/**"), force:true, secure:true )
+    end
   end
 
+  desc 'Transfer paintings table from development to production'
+  task :transfer, [:category] => [:environment] do |r, args|
+    puts "args:#{args}"
+    # cat_arr = Category.all.map(&:name)
+    cat_arr = %w[Journal Winterscapes Oceanside Prints Landscapes Northshore Portraits]
+    h = {}
+    cat_arr.each do |cat_name|
+      h[cat_name] = {}
+      cat_id = Category.where(name: cat_name).first.id
+      p_arr = Painting.where(category_id: cat_id).all
+      p_arr.each do |p_obj|
+        id_str = p_obj.id.to_s
+        h[cat_name][id_str] = {}
+        h[cat_name][id_str]['id'] = p_obj.id
+        h[cat_name][id_str]['page_position'] = p_obj.page_position
+        h[cat_name][id_str]['name'] = p_obj.name
+        h[cat_name][id_str]['background'] = p_obj.background
+        h[cat_name][id_str]['date'] = p_obj.date
+        h[cat_name][id_str]['timestamp'] = p_obj.timestamp&.iso8601
+        h[cat_name][id_str]['is_sold'] = p_obj.is_sold
+        h[cat_name][id_str]['width'] = p_obj.width
+        h[cat_name][id_str]['height'] = p_obj.height
+        # h[cat_name][id_str]['image'] = p_obj.image
+        h[cat_name][id_str]['image_path'] = p_obj.image.file.file
+        h[cat_name][id_str]['image_filename'] = p_obj.image.identifier
+        h[cat_name][id_str]['category_id'] = p_obj.category_id
+        h[cat_name][id_str]['type_id'] = p_obj.type_id
+      end
+    end
+    pp h
+  end
 end
 
 

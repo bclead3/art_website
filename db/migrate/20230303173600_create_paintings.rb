@@ -4,7 +4,6 @@ class CreatePaintings < ActiveRecord::Migration[7.0]
       t.integer :page_position
       t.string  :name
       t.text    :background
-      t.date    :date
       t.datetime :timestamp
       t.decimal :price
       t.boolean :is_sold

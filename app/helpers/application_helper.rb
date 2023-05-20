@@ -49,7 +49,38 @@ module ApplicationHelper
     ret_str.html_safe
   end
 
+  def generate_carousel_array(category)
+    painting_arr = retrieve_paintings_by_category(category)
+    ret_str = ''
+    i = 0
+    while(i < painting_arr.length)
+      i += 1
+      ret_str += "<span class='dot' data='#{i}'></span>"
+    end
+
+    painting_arr.each_with_index do |painting, p_index|
+      ret_str += "<div class='carousel-item #{p_index.zero? ? 'active' : ''}'>"
+      ret_str += "<img class='d-block' src='#{strip_early_dirs(painting.image.file.file)}' alt='#{painting.name}'>"
+      ret_str += "<div class='carousel-caption d-none d-md-block'>"
+      ret_str += "<h5>#{painting.name}</h5></div></div>"
+    end
+
+    ret_str.html_safe
+  end
+
   private
+
+  def strip_early_dirs(filename)
+    return '' if filename.blank?
+
+    arr = filename.split('/')
+    i = 0
+    dirname = ''
+    while (dirname != 'public')
+      dirname = arr.shift
+    end
+    arr.join('/')
+  end
 
   def strip_root_with_version(arr, type)
     ret_arr = arr.map do |x|
