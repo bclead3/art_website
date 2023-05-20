@@ -273,9 +273,9 @@ namespace :paintings do
   end
 
   desc 'Take paintings from public/Media and populate the Painting database table'
-  task :uploads_reset, [:category] => [:environment] do |t, args|
+  task :uploads_reset do |t, args|
     puts "args #{args}"
-    cat_arr = Category.all.map(&:name)
+    cat_arr = %w[Journal Landscapes Northshore Oceanside Portraits Prints Winterscapes]
     cat_arr.each do |cat_name|
       puts "Clearing files from #{cat_name} directory"
       FileUtils.rm_r( Dir.glob("#{Rails.root}/public/uploads/image/painting/#{cat_name}/**/**"), force:true, secure:true )
