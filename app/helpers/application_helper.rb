@@ -68,19 +68,21 @@ module ApplicationHelper
     ret_str.html_safe
   end
 
-  private
-
   def strip_early_dirs(filename)
     return '' if filename.blank?
 
-    arr = filename.split('/')
-    i = 0
-    dirname = ''
-    while (dirname != 'public')
-      dirname = arr.shift
-    end
-    arr.join('/')
+    # arr = filename.split('/')
+    # i = 0
+    # dirname = ''
+    # while (dirname != 'public')
+    #   dirname = arr.shift
+    # end
+    # arr.join('/')
+    filename.slice! (Rails.root.to_s + '/public')
+    filename
   end
+
+  private
 
   def strip_root_with_version(arr, type)
     ret_arr = arr.map do |x|
