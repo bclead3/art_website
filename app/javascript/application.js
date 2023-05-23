@@ -2,3 +2,4 @@
 import * as bootstrap from "bootstrap"
 
 require("./packs/paintings")
+

@@ -40,7 +40,12 @@ ActiveAdmin.register Painting do
       f.input :height
       f.input :category
       f.input :type
-      f.input :image, required: false, hint: image_tag(object.image.url(:thumb)).html_safe
+      if object&.image&.url
+        f.input :image, required: false, hint: image_tag(object.image.url(:thumb)).html_safe
+      else
+        f.input :image, required: false
+      end
+
     end
     f.actions
   end

@@ -53,4 +53,8 @@ $(document).ready(function(e) {
         console.log("dot click"+dotIndex)
         currentSlide(dotIndex)
     })
+
+    $('#painting_category_id').on('change', function(){
+        console.log('change gives '+this.value);
+    })
 })
