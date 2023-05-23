@@ -1,3 +1,50 @@
+<style>
+    [class*="-button"] {
+        flex: 1 1 30%;
+        /*border: 1px solid #333333;*/
+        justify-content: center;
+        flex-display: row;
+        margin: 5px;
+        padding: 5px 5px 40px 5px;
+    }
+    [class*="-button"] img {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
+        position: relative;
+    }
+    [class*="-button"] .title {
+        position: relative;
+        top: 20px;
+        left: 50px;
+        color: #DDDDDD;
+        z-index: 1;
+        font-size: 1.7em;
+        line-height: 0;
+        text-shadow: -1px -1px 0 #990E15, 1px -1px 0 #999999;
+    }
+    [class*="-button"] .painting-size {
+        position: relative;
+        top: 20px;
+        left: 0px;
+        color: #DDDDDD;
+        z-index: 1;
+        font-size: 0.8em;
+        line-height: 0;
+        text-shadow: -1px -1px 0 #990E15, 1px -1px 0 #999999;
+    }
+    [class*="-button"] .title {
+       position: relative;
+       top: 20px;
+       left: 50px;
+       color: #DDDDDD;
+       z-index: 1;
+       font-size: 1.7em;
+       line-height: 0;
+       text-shadow: -1px -1px 0 #990E15, 1px -1px 0 #999999;
+       /*justify-content: center;*/
+    }
+</style>
 <div class="gallery-main">
   <div class="gallery-title"><%= category %></div>
   <div class="gallery-wrapper">
@@ -5,12 +52,13 @@
     <% painting_arr.each_with_index do |painting, arr_index| %>
       <% file_path = file_arr[arr_index] %>
       <% title = painting.name %>
-      <div class="landscapes-button">
-        <div class="title"><%= title %></div>
+      <div class="painting-button">
         <div class="status sold <%= painting.is_sold %>"></div>
-        <a class="landscapes-anchor" href='<%= file_path %>'>
+        <a class="painting-anchor" href='<%= file_path %>'>
           <img src='<%= file_path %>' alt='<%= title %>' />
         </a>
+        <div class="title"><%= title %></div>
+        <div class="painting-size"><%= painting.width %> <%= painting.width.present? ? 'x' : '' %> <%= painting.height %></div>
       </div>
     <% end %>
   </div>
