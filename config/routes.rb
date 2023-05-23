@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # ActiveAdmin
   ActiveAdmin.routes(self) if Object.const_defined?('ActiveAdmin')
 
+  get '/Site/SaraJLeadholm', to: 'paintings#home'
   get '/profile', to: 'paintings#profile'
   get '/portraits', to: 'paintings#portraits'
   get '/galleries', to: 'paintings#galleries'
