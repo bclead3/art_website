@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   get '/prints', to: 'paintings#prints'
   get '/home', to:'paintings#home'
   # Defines the root path route ("/")
-  root "paintings#index"
+  root "paintings#profile"
 
 end

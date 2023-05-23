@@ -237,6 +237,7 @@ https://stackoverflow.com/questions/20307766/invalid-route-name-already-in-use-a
 https://activeadmin.info/5-forms.html
 https://activeadmin.info/11-decorators.html#forms
 https://stackoverflow.com/questions/16640415/rails-active-admin-association-image-column
+https://groups.google.com/g/activeadmin/c/iRKZpSNSMzo
 
 RAKE DB MIGRATE ROLLBACK
 https://stackoverflow.com/questions/19805637/why-does-rake-dbrollback-rollback-three-steps
