@@ -60,7 +60,7 @@ module ApplicationHelper
 
     painting_arr.each_with_index do |painting, p_index|
       ret_str += "<div class='carousel-item #{p_index.zero? ? 'active' : ''}'>"
-      ret_str += "<img class='d-block' src='#{strip_early_dirs(painting.image.file.file)}' alt='#{painting.name}'>"
+      ret_str += "<img class='d-block' src='#{strip_root_from_filename(painting.image.file.file)}' alt='#{painting.name}'>"
       ret_str += "<div class='carousel-caption d-none d-md-block'>"
       ret_str += "<h5>#{painting.name}</h5></div></div>"
     end
@@ -68,27 +68,17 @@ module ApplicationHelper
     ret_str.html_safe
   end
 
-  def strip_early_dirs(filename)
+  def strip_root_from_filename(filename)
     return '' if filename.blank?
 
-    # arr = filename.split('/')
-    # i = 0
-    # dirname = ''
-    # while (dirname != 'public')
-    #   dirname = arr.shift
-    # end
-    # arr.join('/')
     filename.slice! (Rails.root.to_s + '/public')
     filename
   end
 
-  private
-
   def strip_root_with_version(arr, type)
     ret_arr = arr.map do |x|
       filename = x.image.versions[type].file.file
-      filename.slice! (Rails.root.to_s + '/public')
-      filename
+      strip_root_from_filename(filename)
     end
     ret_arr
   end
@@ -96,8 +86,7 @@ module ApplicationHelper
   def strip_root(arr)
     ret_arr = arr.map do |x|
       filename = x.image.file.file
-      filename.slice! (Rails.root.to_s + '/public')
-      filename
+      strip_root_from_filename(filename)
     end
     ret_arr
   end

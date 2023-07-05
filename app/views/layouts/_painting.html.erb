@@ -54,7 +54,7 @@
       <% title = painting.name %>
       <div class="painting-button">
         <div class="status sold <%= painting.is_sold %>"></div>
-        <a class="painting-anchor" href='<%= file_path %>'>
+        <a class="painting-anchor" href='<%= strip_root_from_filename(painting_path(painting.id)) %>'>
           <img src='<%= file_path %>' alt='<%= title %>' />
         </a>
         <div class="title"><%= title %></div>

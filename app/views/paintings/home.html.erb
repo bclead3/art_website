@@ -20,28 +20,31 @@ body {
     position: relative;
     float: left;
     font-size: 1.5em;
-    width: 30%;
+    width: 40%;
     padding-right: 20px;
 }
 
 .home-page-background-image {
     float: left;
-    width: 60%;
+    width: 50%;
+}
+
+.home-page-background-image img {
+    vertical-align: middle;
+    width: 100%;
 }
 
 /* https://www.w3schools.com/css/tryit.asp?filename=trycss3_reflection_below */
 .home-page-background-image {
     position: relative;
     background: url('/Media/Oceanside/Mendocino Coastline.jpg') bottom;
-    width: 600px;
-    height: 800px;
 }
 .home-page-background-image:after,
 .home-page-background-image:before {
     content: '';
     position: absolute;
     display: block;
-    width: inherit;
+    width: 100%;
     height: 50%;
     bottom: -50%;
 }

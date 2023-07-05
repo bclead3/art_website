@@ -42,7 +42,6 @@
 /public/packs
 /public/packs-test
 /public/uploads/tmp
-/node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
@@ -52,4 +51,5 @@ yarn-debug.log*
 */.DS_Store
 
 yarn.lock
+/.byebug_history
 .byebug_history

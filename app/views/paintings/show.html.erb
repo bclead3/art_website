@@ -1,0 +1,18 @@
+<% category = @painting.category.name %>
+<%= render 'layouts/header', dir_name: category %>
+
+
+<div class="individual-painting">
+  <div class="title-section">
+    <div class="is-sold">
+      <%= @painting.is_sold? ? 'Sold' : '' %>
+    </div>
+    <div class="painting-size"><%= @painting.width %> <%= @painting.width.present? ? 'x' : '' %> <%= @painting.height %></div>
+    <div class="painting-title">
+      <%= @painting.name %>
+    </div>
+  </div>
+  <div class="individual-image">
+    <img src='<%= strip_root_from_filename(@painting.image.file.file) %>' />
+  </div>
+</div>

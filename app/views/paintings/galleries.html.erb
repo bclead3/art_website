@@ -1,22 +1,27 @@
 <style>
-  .gallery-main .gallery-title {
-      margin-top: 250px;
-      display: flex;
-      justify-content: center;
-      color: #bbbbbb;
-      font-size: 2em;
-  }
-  .gallery-main .gallery-wrapper {
+  .gallery-main {
+    margin-top: 150px;
+
+    .gallery-title {
+        display: flex;
+        justify-content: center;
+        color: #bbbbbb;
+        font-size: 2em;
+    }
+
+    .gallery-wrapper {
       margin-left: 10px;
       color: #999999;
       display: flex;
       flex-wrap: wrap;
+    }
   }
+
   [class*="-button"] {
       flex: 1 1 30%;
       /*border: 1px solid #333333;*/
       justify-content: center;
-      flex-display: row;
+      /*flex-display: row;*/
       margin: 5px;
       padding: 5px 5px 40px 5px;
   }
@@ -38,6 +43,7 @@
       text-shadow: -1px -1px 0 #990E15, 1px -1px 0 #999999;
   }
 </style>
+
 <%= render 'layouts/header' %>
 <div class="gallery-main">
   <div class="gallery-title">Galleries</div>
