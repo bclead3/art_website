@@ -59,7 +59,10 @@ Rails.application.configure do
   config.active_record.verbose_query_logs = true
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  config.assets.quiet = false
+  config.assets.compile = true
+  # config.assets.css_compressor = :yui
+  # config.assets.js_compressor = :terser
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

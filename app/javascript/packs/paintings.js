@@ -5,7 +5,9 @@ $(document).ready(function(e) {
     function showSlides(n) {
         console.log("Within showSlides n=" + n)
         let i;
-        let slides = document.getElementsByClassName("carousel-item");
+        let slides = document.getElementsByClassName('carousel-item');
+        let slideIndex = 0
+
         if (n > slides.length) {
             slideIndex = 1
         }
@@ -13,15 +15,16 @@ $(document).ready(function(e) {
             slideIndex = slides.length
         }
         for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+            slides[i].setAttribute('style', 'display:none;')
         }
 
-        slides[slideIndex - 1].style.display = "block";
+        let slide = slides[slideIndex -1]
+        if (slide) slide.setAttribute('style', 'display:block;')
 
-        let dots = document.getElementsByClassName("dot");
-        console.log("The numbr of dots is:"+dots.length);
+        let dots = document.getElementsByClassName('dot');
+        console.log('The number of dots is:' + dots.length);
         for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+            dots[i].className = dots[i].className.replace(' active', '');
         }
         let dotIndex = slideIndex - 1
         for (i = 0; i < dots.length; i++) {

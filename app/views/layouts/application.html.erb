@@ -11,12 +11,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%# stylesheet_pack_tag 'styles/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag "stylesheets_application", "data-turbo-track": "reload" %>
 
-    <%#= javascript_importmap_tags %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <%#= javascript_include_tag "application" %>
+    <%= stylesheet_link_tag "stylesheets_application" %>
 
   </head>
 
