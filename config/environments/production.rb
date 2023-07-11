@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   config.assets.css_compressor = :yui
-  config.assets.js_compressor = :terser
+  # config.assets.js_compressor = :terser
 
 
   # Enable serving of images, styles, and JavaScripts from an asset server.
