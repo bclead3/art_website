@@ -10,6 +10,6 @@ Rails.application.config.assets.precompile += %w[painting.scss painting_pages.sc
 Rails.application.config.assets.paths << Rails.root.join("node_modules/bootstrap-icons/font")
 
 # Precompile additional assets.
-# application.js, stylesheets_application.css, and all non-JS/CSS in the app/assets
+# application.js, sarasite.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
