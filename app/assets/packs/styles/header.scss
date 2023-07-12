@@ -62,21 +62,29 @@ body {
 }
 
 @media screen and (max-width: 479px) {
+  .site-header {
+    padding: 0;
+  }
+
   .header-menu-wrapper {
     padding: 1em;
+    display: block;
   }
+
   #headerTitle {
     font-size: 2.1em;
   }
+
   #headerSubTitle {
     display: none;
   }
+
   .wide-menu {
     display: none;
   }
 }
 
-@media screen and (min-width: 480px){
+@media screen and (min-width: 480px) {
   .header-menu-wrapper {
     display: none;
   }

@@ -1,10 +1,59 @@
+<style>
+    .topNav {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .topNav #myLinks {
+        display: none;
+    }
+
+    .topNav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    .topNav a.icon {
+        background: black;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topNav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+</style>
+
+<script>
+  function myFunction() {
+    let x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
+</script>
+
 <div id='headerWrapper' class="header-wrapper">
   <header id='siteHeader' class="site-header no-wrap">
     <div id='mobileMenu' class="mobile-menu">
-      <div id='menuIcon' class="header-menu-wrapper">
+      <a id='menuIcon' class="header-menu-wrapper" onclick="myFunction()">
         <% hamburger_path = image_path("/icons/icons8-menu-rounded-96.png") %>
         <%= image_tag( hamburger_path, height: 50, width: 50) %>
-      </div>
+      </a>
     </div>
 
 
@@ -28,4 +77,16 @@
       </div>
     </div>
   </header>
+</div>
+
+<div class="topNav">
+  <div id="myLinks">
+    <a href="/home">Bio / Ideal</a>
+    <a href="/galleries">Galleries</a>
+    <a href="/landscapes">Landscapes</a>
+    <a href="/oceanside">Oceanside</a>
+    <a href="/portraits">Portraits</a>
+    <a href="/prints">Prints</a>
+    <a href="/winterscapes">Winterscapes</a>
+  </div>
 </div>

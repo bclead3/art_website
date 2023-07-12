@@ -1,6 +1,5 @@
 
 .gallery-main {
-  margin-top: 100px;
 
   .gallery-title {
     display: flex;
@@ -151,6 +150,7 @@
 
 .slideshow-button {
   margin-top: 0;
+  display: none;
 }
 
 .individual-painting {
@@ -160,6 +160,10 @@
   .individual-image {
     margin: auto;
     width: 100%;
+
+    img {
+      width: 95%;
+    }
   }
 
   .title-section {
@@ -171,6 +175,36 @@
     .painting-title {
       font-size: 16pt;
     }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .gallery-main {
+    margin-top: 30px;
+  }
+
+  [class*="-button"] {
+    flex: 1 1 85%;
+  }
+
+  .individual-painting {
+    margin-top: 30px;
+    margin-left: 10px;
+
+    .individual-image {
+      margin: auto;
+      width: 100%;
+
+      img {
+        width: 95%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .gallery-main {
+    margin-top: 100px;
   }
 }
 
